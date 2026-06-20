@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#05060f">
+    <title>Aethelon — Quantum Navigation for the Next Frontier</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon (1).png">
+
+    <!-- Fonts: single lightweight family, preconnected -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" media="all" onload="this.media='all'">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="main.js" defer=""></script>
+
+  </head>
+
+  <body cz-shortcut-listen="true">
+    <!-- Ambient star field -->
+    <canvas id="starfield" aria-hidden="true" width="2542" height="1846" style="width: 1271px; height: 923px;"></canvas>
+    <div class="aurora" aria-hidden="true"></div>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Navigation -->
+    <header class="nav" id="nav">
+      <div class="container nav__inner">
+        <a href="#">
+          <img src="assets/logo.png" width="160" height="32">
+        </a>
+        <nav class="nav__links" aria-label="Primary">
+          <a href="#capabilities">Capabilities</a>
+          <a href="#system">System</a>
+          <a href="#missions">Missions</a>
+        </nav>
+        <a href="#contact" class="btn btn--ghost nav__cta">Request access</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" id="hero">
+        <div class="container hero__inner">
+          <div class="hero__copy is-visible" data-reveal="">
+            <p class="eyebrow"><span class="eyebrow__dot"></span> Deep-space guidance systems</p>
+            <h1 class="hero__title">Navigation for the<br><span class="grad">next frontier.</span></h1>
+            <p class="hero__lede">
+              Aethelon builds the quantum guidance systems that carry spacecraft beyond the known —
+              charting trajectories across deep space with sub-millimeter precision.
+            </p>
+            <div class="hero__actions">
+              <a href="#capabilities" class="btn btn--primary">Explore the platform</a>
+              <a href="#contact" class="btn btn--link">Request mission access <span aria-hidden="true">→</span></a>
+            </div>
+            <dl class="hero__stats">
+              <div><dt>0.4µm</dt><dd>positional accuracy</dd></div>
+              <div><dt>120+</dt><dd>orbital corrections / s</dd></div>
+              <div><dt>99.999%</dt><dd>guidance uptime</dd></div>
+            </dl>
+          </div>
+
+          <!-- Orbital focal point -->
+          <div class="hero__visual" data-parallax="0.06" aria-hidden="true">
+            <svg class="orbit" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="core" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#cfe0ff"></stop>
+                  <stop offset="35%" stop-color="#7aa2ff"></stop>
+                  <stop offset="100%" stop-color="#3b3a8f"></stop>
+                </radialGradient>
+                <linearGradient id="ring" x1="0" y1="0" x2="480" y2="480" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#7aa2ff"></stop>
+                  <stop offset="1" stop-color="#a98bff"></stop>
+                </linearGradient>
+                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="8" result="b"></feGaussianBlur>
+                  <feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+                </filter>
+              </defs>
+
+              <circle cx="240" cy="240" r="210" stroke="url(#ring)" stroke-width="1" opacity="0.18"></circle>
+              <circle cx="240" cy="240" r="160" stroke="url(#ring)" stroke-width="1" opacity="0.28"></circle>
+
+              <g class="orbit__spin orbit__spin--a">
+                <ellipse cx="240" cy="240" rx="210" ry="92" stroke="url(#ring)" stroke-width="1.25" opacity="0.55" transform="rotate(-24 240 240)"></ellipse>
+                <circle class="orbit__moon" cx="450" cy="240" r="5" fill="#c9b8ff" transform="rotate(-24 240 240)"></circle>
+              </g>
+              <g class="orbit__spin orbit__spin--b">
+                <ellipse cx="240" cy="240" rx="190" ry="64" stroke="url(#ring)" stroke-width="1.25" opacity="0.45" transform="rotate(38 240 240)"></ellipse>
+                <circle class="orbit__moon" cx="430" cy="240" r="4" fill="#7aa2ff" transform="rotate(38 240 240)"></circle>
+              </g>
+              <g class="orbit__spin orbit__spin--c">
+                <ellipse cx="240" cy="240" rx="150" ry="150" stroke="url(#ring)" stroke-width="1" opacity="0.35"></ellipse>
+                <circle class="orbit__moon" cx="390" cy="240" r="3.5" fill="#eef1ff"></circle>
+              </g>
+
+              <circle cx="240" cy="240" r="46" fill="url(#core)" filter="url(#glow)"></circle>
+              <circle cx="240" cy="240" r="46" stroke="#cfe0ff" stroke-width="0.5" opacity="0.4"></circle>
+            </svg>
+          </div>
+        </div>
+        <div class="scroll-cue" aria-hidden="true"><span></span></div>
+      </section>
+
+      <!-- Capabilities -->
+      <section class="section" id="capabilities">
+        <div class="container">
+          <header class="section__head" data-reveal="">
+            <p class="eyebrow"><span class="eyebrow__dot"></span> Capabilities</p>
+            <h2 class="section__title">Engineered for the edge of the map.</h2>
+            <p class="section__sub">A unified guidance stack built for environments where a single degree of error spans a million kilometers.</p>
+          </header>
+          <div class="grid grid--3">
+            <article class="card" data-reveal="">
+              <div class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"></circle><path d="M12 3v18M3 12h18"></path><circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none"></circle></svg>
+              </div>
+              <h3>Quantum positioning</h3>
+              <p>Entanglement-referenced sensors hold a fixed frame without drift — no ground station, no GPS, no compromise.</p>
+            </article>
+            <article class="card" data-reveal="">
+              <div class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 12c4-7 14-7 18 0-4 7-14 7-18 0Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </div>
+              <h3>Trajectory intelligence</h3>
+              <p>Onboard models recompute optimal burns 120 times per second, adapting to gravity wells the instant they're sensed.</p>
+            </article>
+            <article class="card" data-reveal="">
+              <div class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-4Z"></path><path d="m9 12 2 2 4-4"></path></svg>
+              </div>
+              <h3>Resilient by design</h3>
+              <p>Triple-redundant cores and radiation-hardened silicon keep guidance live through solar storms and deep-space silence.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- System / metrics -->
+      <section style="margin-top: -130px;" class="section section--panel" id="system">
+        <div class="container system__grid">
+          <div class="system__copy" data-reveal="">
+            <p class="eyebrow"><span class="eyebrow__dot"></span> The Aethelon Core</p>
+            <h2 class="section__title">One system. From low orbit to interstellar space.</h2>
+            <p class="section__sub">The Core fuses quantum sensing, predictive flight dynamics, and autonomous fault recovery into a single sealed module — qualified for missions measured in decades.</p>
+            <ul class="checklist">
+              <li>Autonomous deep-space station-keeping</li>
+              <li>Sub-millimeter relative docking</li>
+              <li>Self-healing fault isolation</li>
+              <li>Decade-scale mission endurance</li>
+            </ul>
+          </div>
+          <div class="system__panel" data-reveal="">
+            <div class="readout">
+              <div class="readout__row"><span>Frame lock</span><b class="ok">STABLE</b></div>
+              <div class="readout__bar"><i style="--w:96%"></i></div>
+              <div class="readout__row"><span>Trajectory confidence</span><b>99.4%</b></div>
+              <div class="readout__bar"><i style="--w:99%"></i></div>
+              <div class="readout__row"><span>Drift / 24h</span><b>0.4µm</b></div>
+              <div class="readout__bar"><i style="--w:8%"></i></div>
+              <div class="readout__grid">
+                <div><dt>Δv reserve</dt><dd>1,240 m/s</dd></div>
+                <div><dt>Range</dt><dd>3.7 AU</dd></div>
+                <div><dt>Latency</dt><dd>0 ms · local</dd></div>
+                <div><dt>Mode</dt><dd>Autonomous</dd></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Missions -->
+      <section style="margin-top: -130px;" class="section" id="missions">
+        <div class="container">
+          <header class="section__head" data-reveal="">
+            <p class="eyebrow"><span class="eyebrow__dot"></span> Missions</p>
+            <h2 class="section__title">Trusted where there is no second chance.</h2>
+          </header>
+          <div class="grid grid--3 timeline">
+            <article class="phase" data-reveal="">
+              <span class="phase__tag">Orbital</span>
+              <h3>Constellation keeping</h3>
+              <p>Maintaining formation across satellite constellations with autonomous collision avoidance.</p>
+            </article>
+            <article class="phase" data-reveal="">
+              <span class="phase__tag">Lunar</span>
+              <h3>Cislunar transit</h3>
+              <p>Precision insertion and descent guidance for cargo and crewed lunar approaches.</p>
+            </article>
+            <article class="phase" data-reveal="">
+              <span class="phase__tag">Deep space</span>
+              <h3>Interplanetary cruise</h3>
+              <p>Years-long autonomous navigation beyond the reach of real-time ground control.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section style="margin-top: -130px;" class="section cta" id="contact">
+        <div class="container cta__inner" data-reveal="">
+          <h2 class="cta__title">Build the route to everywhere.</h2>
+          <p class="cta__sub">Aethelon partners with a small number of programs each cycle. Request access to the platform briefing.</p>
+          <form class="cta__form" id="accessForm" novalidate="">
+            <label class="sr-only" for="email">Work email</label>
+            <input type="email" id="email" name="email" placeholder="you@program.org" autocomplete="email" required="">
+            <button type="submit" class="btn btn--primary">Request access</button>
+          </form>
+          <p class="cta__note" id="formNote" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer style="margin-top: -40px;" class="footer">
+      <div class="container footer__inner">
+        <a href="#"><img src="assets/logo.png" width="140" height="28"></a> 
+        <p class="footer__copy">© <span id="year">2026</span> Aethelon Systems. Engineering navigation beyond the known.</p>
+        <nav class="footer__links" aria-label="Footer">
+          <a href="#capabilities">Capabilities</a>
+          <a href="#system">System</a>
+          <a href="#missions">Missions</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="main.js" defer=""></script>
+
+
+  </body>
+
+</html>
